@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+import pytz
 
 def next_schedule_time(current_time_str):
     # Updated scheduled times
@@ -47,3 +48,10 @@ def find_latest_date(dates):
 
     # Convert the latest datetime object back to string format
     return latest_date.isoformat().replace("+00:00", "Z")
+
+def convert_to_UTC1(timestamp_utc):
+    dt_utc = datetime.fromisoformat(timestamp_utc.replace("Z", "+00:00"))
+    tz = pytz.timezone('Europe/Berlin')
+    dt = dt_utc.astimezone(tz)
+    ft_dt = dt.strftime("%d %B %Y %H:%M")
+    return ft_dt

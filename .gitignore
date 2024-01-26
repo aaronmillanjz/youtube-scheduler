@@ -1,0 +1,17 @@
+# Ignore all .mp4 files
+*.mp4
+
+# Ignore all .pickle files
+*.pickle
+
+# Ignore Python compiled files
+*.pyc
+
+# Ignore JSON files
+*.json
+
+# Ignore .bat files
+*.bat
+
+# Ignore .ico files
+*.ico
